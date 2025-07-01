@@ -13,13 +13,16 @@ typeWriter();
 function showBirthdayNote() {
     const note = document.getElementById("note");
     note.classList.add("show");
-    playMusic();
-    launchConfetti();
-}
 
-function playMusic() {
+    // মিউজিক চালাও
     const music = document.getElementById("bgMusic");
     music.play();
+
+    // confetti চালাও
+    launchConfetti();
+
+    // "আরো ভালোবাসার কথা পড়ো" বাটন দেখাও
+    document.getElementById("showBigNoteBtn").classList.remove("hidden");
 }
 
 function launchConfetti() {
@@ -44,4 +47,12 @@ function launchConfetti() {
             requestAnimationFrame(frame);
         }
     }());
+}
+
+function showBigLoveNote() {
+    const bigNote = document.getElementById("bigLoveNote");
+    bigNote.classList.add("show");
+
+    // বড় নোট দেখানোর পরে বাটনটা আর দেখাবে না
+    document.getElementById("showBigNoteBtn").classList.add("hidden");
 }
