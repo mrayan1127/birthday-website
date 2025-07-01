@@ -1,6 +1,7 @@
-// typing effect
+// টাইপিং এফেক্টের কোড (অবশ্যই script.js-তে এই ফাংশন থাকবে)
 const text = "Happy Birthday My Love ❤️";
 let index = 0;
+
 function typeWriter() {
     if (index < text.length) {
         document.getElementById("typewriter").innerHTML += text.charAt(index);
@@ -8,20 +9,20 @@ function typeWriter() {
         setTimeout(typeWriter, 150);
     }
 }
-typeWriter();
+
+window.onload = function() {
+    typeWriter();
+};
 
 function showBirthdayNote() {
     const note = document.getElementById("note");
     note.classList.add("show");
 
-    // মিউজিক চালাও
     const music = document.getElementById("bgMusic");
     music.play();
 
-    // confetti চালাও
     launchConfetti();
 
-    // "আরো ভালোবাসার কথা পড়ো" বাটন দেখাও
     document.getElementById("showBigNoteBtn").classList.remove("hidden");
 }
 
@@ -46,13 +47,12 @@ function launchConfetti() {
         if (Date.now() < end) {
             requestAnimationFrame(frame);
         }
-    }());
+    })();
 }
 
 function showBigLoveNote() {
     const bigNote = document.getElementById("bigLoveNote");
     bigNote.classList.add("show");
 
-    // বড় নোট দেখানোর পরে বাটনটা আর দেখাবে না
     document.getElementById("showBigNoteBtn").classList.add("hidden");
 }
