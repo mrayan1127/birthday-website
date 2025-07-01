@@ -1,7 +1,13 @@
+function showBirthdayNote() {
+    const note = document.getElementById("note");
+    note.classList.add("show");
+    playMusic();
+    launchConfetti();
+}
+
 function playMusic() {
     const music = document.getElementById("bgMusic");
     music.play();
-    launchConfetti();
 }
 
 function launchConfetti() {
@@ -26,9 +32,4 @@ function launchConfetti() {
             requestAnimationFrame(frame);
         }
     }());
-}
-
-function showNote() {
-    const note = document.getElementById("note");
-    note.classList.add("show");
 }
