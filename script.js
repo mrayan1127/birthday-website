@@ -1,3 +1,15 @@
+// typing effect
+const text = "Happy Birthday My Love ❤️";
+let index = 0;
+function typeWriter() {
+    if (index < text.length) {
+        document.getElementById("typewriter").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 150);
+    }
+}
+typeWriter();
+
 function showBirthdayNote() {
     const note = document.getElementById("note");
     note.classList.add("show");
