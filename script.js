@@ -27,3 +27,8 @@ function launchConfetti() {
         }
     }());
 }
+
+function showNote() {
+    const note = document.getElementById("note");
+    note.classList.add("show");
+}
